@@ -18,7 +18,7 @@ public class VElegirRetado extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VElegirRetado frame = new VElegirRetado();
+					VElegirRetado frame = new VElegirRetado(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
