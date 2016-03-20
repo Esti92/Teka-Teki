@@ -18,7 +18,7 @@ public class VRanking extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VRanking frame = new VRanking();
+					VRanking frame = new VRanking(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
