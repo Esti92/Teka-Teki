@@ -45,10 +45,10 @@ public class VNivel extends JFrame {
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, "cell 0 1,alignx center,growy");
-		panel.setLayout(new MigLayout("", "[]", "[][][][][]"));
+		panel.setLayout(new MigLayout("", "[]", "[][][][]"));
 		
 		JButton btnNivelBajo = new JButton("Nivel bajo");
-		panel.add(btnNivelBajo, "cell 0 1,alignx center");
+		panel.add(btnNivelBajo, "cell 0 0,alignx center");
 		
 		btnNivelBajo.addMouseListener(new MouseAdapter() {
 			@Override
@@ -62,7 +62,7 @@ public class VNivel extends JFrame {
 		});
 		
 		JButton btnNivelMedio = new JButton("Nivel Medio");
-		panel.add(btnNivelMedio, "cell 0 2,alignx center");
+		panel.add(btnNivelMedio, "cell 0 1,alignx center");
 		
 		btnNivelMedio.addMouseListener(new MouseAdapter() {
 			@Override
@@ -76,7 +76,7 @@ public class VNivel extends JFrame {
 		});
 		
 		JButton btnNivelDificil = new JButton("Nivel Dificil");
-		panel.add(btnNivelDificil, "cell 0 3,alignx center");
+		panel.add(btnNivelDificil, "cell 0 2,alignx center");
 		
 		btnNivelDificil.addMouseListener(new MouseAdapter() {
 			@Override
@@ -90,7 +90,7 @@ public class VNivel extends JFrame {
 		});
 		
 		JButton btnAtras = new JButton("Atras");
-		panel.add(btnAtras, "cell 0 4,alignx center");
+		panel.add(btnAtras, "cell 0 3,alignx center");
 		
 		btnAtras.addMouseListener(new MouseAdapter() {
 			@Override
