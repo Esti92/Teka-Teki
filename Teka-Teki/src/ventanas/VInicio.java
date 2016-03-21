@@ -6,14 +6,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import net.miginfocom.swing.MigLayout;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VInicio extends JFrame {
 
@@ -24,6 +29,7 @@ public class VInicio extends JFrame {
 	private JPasswordField passwordField;
 	private JButton btnNewButton;
 	private JLabel lblRegistrarse;
+	private JFrame anterior = this;
 
 	/**
 	 * Launch the application.
@@ -79,6 +85,17 @@ public class VInicio extends JFrame {
 		lblRegistrarse.setForeground(Color.BLUE);
 		lblRegistrarse.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		contentPane.add(lblRegistrarse, "cell 6 5,alignx center");
+		
+		lblRegistrarse.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// Cargar siguiente ventana	
+				setVisible(false);
+				VRegistro pS = new VRegistro(anterior);
+				pS.setLocationRelativeTo(null);
+				pS.setVisible(true);
+			}
+		});
 	}
 
 }
