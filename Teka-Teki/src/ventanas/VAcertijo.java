@@ -43,6 +43,7 @@ public class VAcertijo extends JFrame {
 	 * Create the frame.
 	 */
 	public VAcertijo() {
+		setTitle("TEKA-TEKI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
