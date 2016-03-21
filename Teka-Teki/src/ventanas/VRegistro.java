@@ -18,7 +18,7 @@ public class VRegistro extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VRegistro frame = new VRegistro();
+					VRegistro frame = new VRegistro(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -29,8 +29,9 @@ public class VRegistro extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param anterior 
 	 */
-	public VRegistro() {
+	public VRegistro(JFrame anterior) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

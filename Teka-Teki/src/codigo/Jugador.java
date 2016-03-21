@@ -1,5 +1,5 @@
 package codigo;
 
-public class Nivel {
+public class Jugador {
 
 }
