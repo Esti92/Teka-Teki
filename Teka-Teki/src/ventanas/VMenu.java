@@ -89,18 +89,6 @@ public class VMenu extends JFrame {
 			}
 		});
 		
-		JButton btnAtras = new JButton("Atras");
-		panel.add(btnAtras, "cell 0 3,alignx center");
-		
-		btnAtras.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// Cargar siguiente ventana	
-				setVisible(false);
-				vtn.setVisible(true);
-			}
-		});
-		
 	}
 
 }
