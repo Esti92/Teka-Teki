@@ -124,5 +124,5 @@ public class Conexion {
 /*		  JOptionPane.showMessageDialog(null, "Error"
 		    + nl + "Código ya inscrito");*/
 		 }
-    
+        
 }
