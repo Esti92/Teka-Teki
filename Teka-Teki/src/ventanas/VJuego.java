@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.FlowLayout;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -49,6 +50,55 @@ public class VJuego extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new MigLayout("", "[][][][][][][][][][][][][]", "[][][][][][][]"));
 		
+		
+		JButton Ac1 = new JButton();
+		ImageIcon iconoAc1 = new ImageIcon("");
+		Ac1.setIcon(iconoAc1);
+		panel.add(Ac1, "cell 2 2");
+		
+		JButton Ac2 = new JButton();
+		ImageIcon iconoAc2 = new ImageIcon("");
+		Ac2.setIcon(iconoAc2);
+		panel.add(Ac2, "cell 2 2");
+		
+		JButton Ac3 = new JButton();
+		ImageIcon iconoAc3 = new ImageIcon("");
+		Ac3.setIcon(iconoAc3);
+		panel.add(Ac3, "cell 2 2");
+		
+		JButton Ac4 = new JButton();
+		ImageIcon iconoAc4 = new ImageIcon("");
+		Ac4.setIcon(iconoAc4);
+		panel.add(Ac4, "cell 2 2");
+		
+		JButton Ac5 = new JButton();
+		ImageIcon iconoAc5 = new ImageIcon("");
+		Ac5.setIcon(iconoAc5);
+		panel.add(Ac5, "cell 2 2");
+		
+		JButton Ac6 = new JButton();
+		ImageIcon iconoAc6 = new ImageIcon("");
+		Ac6.setIcon(iconoAc6);
+		panel.add(Ac6, "cell 2 2");
+		
+		JButton Ac7 = new JButton();
+		ImageIcon iconoAc7 = new ImageIcon("");
+		Ac7.setIcon(iconoAc7);
+		panel.add(Ac7, "cell 2 2");
+		
+		JButton Ac8 = new JButton();
+		ImageIcon iconoAc8 = new ImageIcon("");
+		Ac8.setIcon(iconoAc8);
+		panel.add(Ac8, "cell 2 2");
+		
+		JButton Ac9 = new JButton();
+		ImageIcon iconoAc9 = new ImageIcon("");
+		Ac9.setIcon(iconoAc9);
+		panel.add(Ac9, "cell 2 2");
+		
+		
+		
+		/*
 		JLabel lblNewLabel = new JLabel("acertijo1");
 		panel.add(lblNewLabel, "cell 2 2");
 		
@@ -75,13 +125,13 @@ public class VJuego extends JFrame {
 		
 		JLabel lblNewLabel_8 = new JLabel("acertijo9");
 		panel.add(lblNewLabel_8, "cell 10 6");
-		
-		JButton btnNewButton = new JButton("VOLVER");
-		btnNewButton.addActionListener(new ActionListener() {
+		*/
+		JButton btnNewButton1 = new JButton("VOLVER");
+		btnNewButton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		contentPane.add(btnNewButton, BorderLayout.SOUTH);
+		contentPane.add(btnNewButton1, BorderLayout.SOUTH);
 	}
 
 }
