@@ -128,6 +128,15 @@ public class VAcertijo extends JFrame {
 		atras = new JButton("ATRAS");
 		panel.add(atras, "cell 0 0,alignx center,aligny center");
 		
+		atras.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// Verificamos que la respuesta sea correcta
+				setVisible(false);
+				vtp.setVisible(true);
+			}
+		});
+		
 		resolver = new JButton("COMPROBAR");
 		panel.add(resolver, "cell 1 0,alignx center,aligny center");
 		
