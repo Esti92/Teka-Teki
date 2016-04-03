@@ -71,9 +71,16 @@ public class VMenu extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				// Cargar siguiente ventana	
 				setVisible(false);
-				VElegirRetado pS = new VElegirRetado(anterior);
-				pS.setLocationRelativeTo(null);
-				pS.setVisible(true);
+				VElegirRetado pS;
+				try {
+					pS = new VElegirRetado(anterior, user);
+					pS.setLocationRelativeTo(null);
+					pS.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		
@@ -87,7 +94,7 @@ public class VMenu extends JFrame {
 				setVisible(false);
 				PuntuacionClass pS;
 				try {
-					pS = new PuntuacionClass();
+					pS = new PuntuacionClass(anterior);
 					pS.setLocationRelativeTo(null);
 					pS.setVisible(true);
 				} catch (SQLException e1) {

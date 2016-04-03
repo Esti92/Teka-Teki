@@ -27,7 +27,7 @@ import java.awt.event.ActionEvent;
 public class VAcertijo extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtTitulo;
+	private JLabel txtTitulo;
 	private JTextField txtRespuesta;
 	private JPanel panel;
 	private JButton atras;
@@ -39,6 +39,7 @@ public class VAcertijo extends JFrame {
 	private static Statement st = null;
 	private static Connection con;
 	private String user;
+	private int puntos;
 	/**
 	 * Create the frame.
 	 * @throws SQLException 
@@ -47,6 +48,17 @@ public class VAcertijo extends JFrame {
 		nivel = _nivel;
 		imagen = _imagen;
 		user = _user;
+		switch (nivel){
+			case 1:
+				puntos = 10;
+				break;
+			case 2:
+				puntos = 20;
+				break;
+			case 3:
+				puntos = 30;
+				break;
+		}
 		setTitle("TEKA-TEKI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -87,24 +99,27 @@ public class VAcertijo extends JFrame {
 		ImageIcon fin = new ImageIcon(tamanio);
 	
 		//Cargamos los datos en la ventana
-		txtTitulo = new JTextField();
+		txtTitulo = new JLabel();
 		txtTitulo.setText("¿?");
 		contentPane.add(txtTitulo, "cell 0 0,alignx center,aligny center");
-		txtTitulo.setColumns(10);
 		
 		JLabel lblFoto = new JLabel("");
 		lblFoto.setIcon(fin);
 		lblFoto.setSize(50,50);
 		contentPane.add(lblFoto, "cell 0 1,alignx center,aligny center");
 		
-		JTextPane txtpnDescripcion = new JTextPane();
-		txtpnDescripcion.setText("descripcion");
-		contentPane.add(txtpnDescripcion, "cell 0 2,alignx center,aligny center");
-		
 		txtRespuesta = new JTextField();
 		txtRespuesta.setText("respuesta");
 		contentPane.add(txtRespuesta, "cell 0 3,alignx center,aligny center");
 		txtRespuesta.setColumns(10);
+		
+		txtRespuesta.addMouseListener(new MouseAdapter(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// Cargar siguiente ventana	
+				txtRespuesta.setText("");
+			}
+		});
 		
 		panel = new JPanel();
 		contentPane.add(panel, "cell 0 4,grow");
@@ -124,7 +139,7 @@ public class VAcertijo extends JFrame {
 				if (respuestaDada.equals(respuesta)){
 					//Si la respuesta es correcta -> insertamos en resueltos su puntuacion
 					int exito;
-					String consulta = "INSERT INTO `resueltos`(`jugador`, `acertijo`, `puntuacion`) VALUES ('"+user+"','"+String.valueOf(nivel)+String.valueOf(imagen)+"',10)";
+					String consulta = "INSERT INTO `resueltos`(`jugador`, `acertijo`, `puntuacion`) VALUES ('"+user+"','"+String.valueOf(nivel)+String.valueOf(imagen)+"',"+String.valueOf(puntos)+")";
 					Conexion.conectar();
 					st = Conexion.conexion();
 					exito = Conexion.consultaActualiza(st, consulta);

@@ -50,7 +50,7 @@ public class VNivel extends JFrame {
 		contentPane.add(panel, "cell 0 1,alignx center,growy");
 		panel.setLayout(new MigLayout("", "[]", "[][][][]"));
 		
-		JButton btnNivelBajo = new JButton("Nivel bajo");
+		JButton btnNivelBajo = new JButton("Nivel bajo (1)");
 		panel.add(btnNivelBajo, "cell 0 0,alignx center");
 		
 		btnNivelBajo.addMouseListener(new MouseAdapter() {
@@ -65,7 +65,7 @@ public class VNivel extends JFrame {
 			}
 		});
 		
-		JButton btnNivelMedio = new JButton("Nivel Medio");
+		JButton btnNivelMedio = new JButton("Nivel Medio (2)");
 		panel.add(btnNivelMedio, "cell 0 1,alignx center");
 		
 		btnNivelMedio.addMouseListener(new MouseAdapter() {
@@ -80,7 +80,7 @@ public class VNivel extends JFrame {
 			}
 		});
 		
-		JButton btnNivelDificil = new JButton("Nivel Dificil");
+		JButton btnNivelDificil = new JButton("Nivel Dificil (3)");
 		panel.add(btnNivelDificil, "cell 0 2,alignx center");
 		
 		btnNivelDificil.addMouseListener(new MouseAdapter() {
