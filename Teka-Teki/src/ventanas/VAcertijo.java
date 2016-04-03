@@ -32,14 +32,14 @@ public class VAcertijo extends JFrame {
 	private JPanel panel;
 	private JButton atras;
 	private JButton resolver;
-	
+
+
 	private int nivel = 0, imagen = 0;
 	private String respuesta = null;
 	private static ResultSet rs = null;
 	private static Statement st = null;
 	private static Connection con;
 	private String user;
-
 	/**
 	 * Create the frame.
 	 * @throws SQLException 

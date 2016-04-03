@@ -138,6 +138,7 @@ public class VJuego extends JFrame {
 		
 		
 		
+<<<<<<< HEAD
 		
 		JButton Ac1 = new JButton();
 		ImageIcon iconoAc1 = new ImageIcon("");
@@ -240,6 +241,8 @@ public class VJuego extends JFrame {
 		
 		
 		
+=======
+>>>>>>> refs/heads/Ruben
 		JLabel lblNewLabel = new JLabel("acertijo1");
 		panel.add(lblNewLabel, "cell 2 2");
 		
