@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -83,21 +84,16 @@ public class VMenu extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				// Cargar siguiente ventana	
 				setVisible(false);
-				VRanking pS = new VRanking(anterior);
-				pS.setLocationRelativeTo(null);
-				pS.setVisible(true);
-			}
-		});
-		
-		JButton btnAtras = new JButton("Atras");
-		panel.add(btnAtras, "cell 0 3,alignx center");
-		
-		btnAtras.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// Cargar siguiente ventana	
-				setVisible(false);
-				vtn.setVisible(true);
+				PuntuacionClass pS;
+				try {
+					pS = new PuntuacionClass();
+					pS.setLocationRelativeTo(null);
+					pS.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
 			}
 		});
 		
