@@ -163,7 +163,7 @@ public class VRegistro extends JFrame {
 						// todo ha ido bien
 						JOptionPane.showMessageDialog(null,"Muy bien "+user+", has sido registrado como Jugador");
 //						Thread.sleep(200);
-						VMenu vL = new VMenu(null);
+						VMenu vL = new VMenu(null, user);
 						vL.setLocationRelativeTo(null);
 						vL.setVisible(true);
 						setVisible(false);
