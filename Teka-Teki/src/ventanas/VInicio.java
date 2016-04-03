@@ -21,6 +21,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class VInicio extends JFrame {
+	
+	
 
 	private JPanel contentPane;
 	private JTextField textField;
