@@ -16,7 +16,7 @@ public class VMenu extends JFrame {
 
 	private JPanel contentPane;
 	private JFrame anterior = this;
-	
+	private String user;
 	/**
 	 * Launch the application.
 	 */
@@ -24,7 +24,7 @@ public class VMenu extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VMenu frame = new VMenu(null);
+					VMenu frame = new VMenu(null, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,8 @@ public class VMenu extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VMenu(JFrame vtn) {
+	public VMenu(JFrame vtn, String _user) {
+		user = _user;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 195, 300);
 		contentPane = new JPanel();
@@ -56,7 +57,7 @@ public class VMenu extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				// Cargar siguiente ventana	
 				setVisible(false);
-				VNivel pS = new VNivel(anterior);
+				VNivel pS = new VNivel(anterior, user);
 				pS.setLocationRelativeTo(null);
 				pS.setVisible(true);
 			}

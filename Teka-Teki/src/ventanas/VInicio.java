@@ -156,7 +156,7 @@ public class VInicio extends JFrame {
 				Sesion.getSesion().iniciarSesion(mijugador, 0);
 				
 			// Carga la ventana
-				VMenu vL = new VMenu(null);
+				VMenu vL = new VMenu(null, user);
 				vL.setLocationRelativeTo(null);
 				vL.setVisible(true);
 				
