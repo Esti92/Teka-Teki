@@ -41,6 +41,7 @@ public class VElegirRetado extends JFrame {
 	public VElegirRetado(JFrame _vtp, String _user) throws SQLException {
 		user = _user;
 		vtp = _vtp;
+		setTitle("RETO!!");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();
@@ -49,7 +50,7 @@ public class VElegirRetado extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel txtTitulo = new JLabel();
-		txtTitulo.setText("Selecciona el juagor a retar");
+		txtTitulo.setText("Selecciona el jugador a retar");
 		txtTitulo.setBounds(114, 10, 250, 30);
 		contentPane.add(txtTitulo);
 		//Buscamos de la tabla de jugadores posibles a cual va a retar excepto a si mismo

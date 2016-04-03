@@ -34,6 +34,7 @@ public class PuntuacionClass extends JFrame {
 	
 	public PuntuacionClass(JFrame _vtp) throws SQLException {
 		vtp = _vtp;
+		setTitle("RANKING DE LOS JUGADORES");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

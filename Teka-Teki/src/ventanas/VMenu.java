@@ -38,6 +38,7 @@ public class VMenu extends JFrame {
 	 */
 	public VMenu(JFrame vtn, String _user) {
 		user = _user;
+		setTitle("MENU DEL JUEGO");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 195, 300);
 		contentPane = new JPanel();

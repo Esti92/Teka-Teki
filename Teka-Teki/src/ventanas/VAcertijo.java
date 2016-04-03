@@ -59,7 +59,7 @@ public class VAcertijo extends JFrame {
 				puntos = 30;
 				break;
 		}
-		setTitle("TEKA-TEKI");
+		setTitle("ACERTIJO ¿?");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -152,8 +152,11 @@ public class VAcertijo extends JFrame {
 					Conexion.conectar();
 					st = Conexion.conexion();
 					exito = Conexion.consultaActualiza(st, consulta);
-					if (exito != -1)
+					if (exito != -1){
 						JOptionPane.showMessageDialog(null,"Muy bien!! has acertado :D");
+						setVisible(false);
+						vtp.setVisible(true);
+					}
 				}else{
 					//Si no es correcta le decimos que lo vuelva a intentar
 					JOptionPane.showMessageDialog(null,"Respuesta incorrecta, Vuelve a intentar :D");

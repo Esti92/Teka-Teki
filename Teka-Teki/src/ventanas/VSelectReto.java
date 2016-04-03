@@ -33,6 +33,7 @@ public class VSelectReto extends JFrame {
 	public VSelectReto(String _user, JFrame _vtp) {
 		user = _user;
 		vtp = _vtp;
+		setTitle("TE HAN RETADO!!");
 		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

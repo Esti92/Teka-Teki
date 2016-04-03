@@ -39,6 +39,7 @@ public class VNivel extends JFrame {
 	 */
 	public VNivel(JFrame vtn, String _user) {
 		user = _user;
+		setTitle("NIVELES");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 195, 300);
 		contentPane = new JPanel();
