@@ -79,8 +79,7 @@ public class PuntuacionClass extends JFrame {
 		while(rs.next()){
 			filas[contadorTmp][0] = rs.getString(1);
 			filas[contadorTmp][1] = rs.getString(2);
-			filas[contadorTmp][2] = rs.getString(3);
-			filas[contadorTmp][3] = rs.getInt(4);
+
 			contadorTmp++;
 		}
 		st.close();
