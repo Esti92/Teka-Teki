@@ -12,32 +12,21 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class VJuego extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VJuego frame = new VJuego();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	private int nivel = 0;
+	private int imagen = 0;
+	private String user;
 	/**
 	 * Create the frame.
 	 */
-	public VJuego() {
+	public VJuego(JFrame vtp, int _nivel, String _user) {
+		nivel = _nivel;
+		user = _user;
 		setTitle("EMPIEZA A JUGAR");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -52,20 +41,70 @@ public class VJuego extends JFrame {
 		
 		
 		JButton Ac1 = new JButton();
-		ImageIcon iconoAc1 = new ImageIcon("");
-		Ac1.setIcon(iconoAc1);
+		Ac1.setText("Acertijo 1");
 		panel.add(Ac1, "cell 2 2");
 		
 		JButton Ac2 = new JButton();
-		ImageIcon iconoAc2 = new ImageIcon("");
-		Ac2.setIcon(iconoAc2);
-		panel.add(Ac2, "cell 2 2");
+		Ac2.setText("Acertijo 2");
+		panel.add(Ac2, "cell 3 2");
 		
 		JButton Ac3 = new JButton();
-		ImageIcon iconoAc3 = new ImageIcon("");
-		Ac3.setIcon(iconoAc3);
-		panel.add(Ac3, "cell 2 2");
+		Ac3.setText("Acertijo 3");
+		panel.add(Ac3, "cell 4 2");
 		
+		// Se colocan los listeners.
+		Ac1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 1;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		Ac2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 2;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		Ac1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 3;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		
+		/*
 		JButton Ac4 = new JButton();
 		ImageIcon iconoAc4 = new ImageIcon("");
 		Ac4.setIcon(iconoAc4);
@@ -98,7 +137,7 @@ public class VJuego extends JFrame {
 		
 		
 		
-		/*
+		
 		JLabel lblNewLabel = new JLabel("acertijo1");
 		panel.add(lblNewLabel, "cell 2 2");
 		
