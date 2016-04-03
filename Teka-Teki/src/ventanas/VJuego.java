@@ -142,18 +142,71 @@ public class VJuego extends JFrame {
 		JButton Ac1 = new JButton();
 		ImageIcon iconoAc1 = new ImageIcon("");
 		Ac1.setIcon(iconoAc1);
+=======
+>>>>>>> refs/heads/Ruben
 		panel.add(Ac1, "cell 2 2");
 		
 		JButton Ac2 = new JButton();
-		ImageIcon iconoAc2 = new ImageIcon("");
-		Ac2.setIcon(iconoAc2);
-		panel.add(Ac2, "cell 2 2");
+		Ac2.setText("Acertijo 2");
+		panel.add(Ac2, "cell 3 2");
 		
 		JButton Ac3 = new JButton();
-		ImageIcon iconoAc3 = new ImageIcon("");
-		Ac3.setIcon(iconoAc3);
-		panel.add(Ac3, "cell 2 2");
+		Ac3.setText("Acertijo 3");
+		panel.add(Ac3, "cell 4 2");
 		
+		// Se colocan los listeners.
+		Ac1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 1;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		Ac2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 2;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		Ac1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 3;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		
+		/*
 		JButton Ac4 = new JButton();
 		ImageIcon iconoAc4 = new ImageIcon("");
 		Ac4.setIcon(iconoAc4);
@@ -186,7 +239,7 @@ public class VJuego extends JFrame {
 		
 		
 		
-		/*
+		
 		JLabel lblNewLabel = new JLabel("acertijo1");
 		panel.add(lblNewLabel, "cell 2 2");
 		
