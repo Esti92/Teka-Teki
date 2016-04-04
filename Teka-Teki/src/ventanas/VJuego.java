@@ -23,6 +23,7 @@ public class VJuego extends JFrame {
 	private int nivel = 0;
 	private int imagen = 0;
 	private String user;
+	private JFrame juegos = this;
 	/**
 	 * Create the frame.
 	 */
@@ -61,7 +62,7 @@ public class VJuego extends JFrame {
 				setVisible(false);
 				VAcertijo vA;
 				try {
-					vA = new VAcertijo(vtn, nivel, imagen, user);
+					vA = new VAcertijo(vtn, nivel, imagen, user, juegos);
 					vA.setLocationRelativeTo(null);
 					vA.setVisible(true);
 				} catch (SQLException e) {
@@ -77,7 +78,7 @@ public class VJuego extends JFrame {
 				setVisible(false);
 				VAcertijo vA;
 				try {
-					vA = new VAcertijo(vtn, nivel, imagen, user);
+					vA = new VAcertijo(vtn, nivel, imagen, user, juegos);
 					vA.setLocationRelativeTo(null);
 					vA.setVisible(true);
 				} catch (SQLException e) {
@@ -94,7 +95,7 @@ public class VJuego extends JFrame {
 				setVisible(false);
 				VAcertijo vA;
 				try {
-					vA = new VAcertijo(vtn, nivel, imagen, user);
+					vA = new VAcertijo(vtn, nivel, imagen, user, juegos);
 					vA.setLocationRelativeTo(null);
 					vA.setVisible(true);
 				} catch (SQLException e) {
