@@ -38,6 +38,7 @@ public class VMenu extends JFrame {
 	 */
 	public VMenu(JFrame vtn, String _user) {
 		user = _user;
+		setTitle("MENU DEL JUEGO");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 195, 300);
 		contentPane = new JPanel();
@@ -71,9 +72,16 @@ public class VMenu extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				// Cargar siguiente ventana	
 				setVisible(false);
-				VElegirRetado pS = new VElegirRetado(anterior);
-				pS.setLocationRelativeTo(null);
-				pS.setVisible(true);
+				VElegirRetado pS;
+				try {
+					pS = new VElegirRetado(anterior, user);
+					pS.setLocationRelativeTo(null);
+					pS.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		
@@ -87,7 +95,7 @@ public class VMenu extends JFrame {
 				setVisible(false);
 				PuntuacionClass pS;
 				try {
-					pS = new PuntuacionClass();
+					pS = new PuntuacionClass(anterior);
 					pS.setLocationRelativeTo(null);
 					pS.setVisible(true);
 				} catch (SQLException e1) {

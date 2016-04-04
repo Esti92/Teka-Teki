@@ -26,6 +26,8 @@ import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 public class VInicio extends JFrame {
+	
+	
 
 	private JPanel contentPane;
 	private JTextField txtIntroduceTuNombre;
@@ -56,6 +58,7 @@ public class VInicio extends JFrame {
 	 * Create the frame.
 	 */
 	public VInicio() {
+		setTitle("TEKA-TEKI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();

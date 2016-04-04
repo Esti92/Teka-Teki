@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Jugador {
 
 	private String nombre;
-	private ArrayList<Acertijo> partidas = new ArrayList<Acertijo>();
+//	private ArrayList<Acertijo> partidas = new ArrayList<Acertijo>();
 
 	
 	public Jugador(String pNombre){

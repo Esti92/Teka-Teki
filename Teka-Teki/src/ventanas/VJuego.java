@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
@@ -24,7 +26,7 @@ public class VJuego extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VJuego(JFrame vtp, int _nivel, String _user) {
+	public VJuego(JFrame vtn, int _nivel, String _user) {
 		nivel = _nivel;
 		user = _user;
 		setTitle("EMPIEZA A JUGAR");
@@ -42,6 +44,110 @@ public class VJuego extends JFrame {
 		
 		JButton Ac1 = new JButton();
 		Ac1.setText("Acertijo 1");
+		panel.add(Ac1, "cell 2 2");
+		
+		JButton Ac2 = new JButton();
+		Ac2.setText("Acertijo 2");
+		panel.add(Ac2, "cell 3 2");
+		
+		JButton Ac3 = new JButton();
+		Ac3.setText("Acertijo 3");
+		panel.add(Ac3, "cell 4 2");
+		
+		// Se colocan los listeners.
+		Ac1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 1;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtn, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		Ac2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 2;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtn, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		Ac3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				imagen = 3;
+				setVisible(false);
+				VAcertijo vA;
+				try {
+					vA = new VAcertijo(vtn, nivel, imagen, user);
+					vA.setLocationRelativeTo(null);
+					vA.setVisible(true);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		
+		/*
+		JButton Ac4 = new JButton();
+		ImageIcon iconoAc4 = new ImageIcon("");
+		Ac4.setIcon(iconoAc4);
+		panel.add(Ac4, "cell 2 2");
+		
+		JButton Ac5 = new JButton();
+		ImageIcon iconoAc5 = new ImageIcon("");
+		Ac5.setIcon(iconoAc5);
+		panel.add(Ac5, "cell 2 2");
+		
+		JButton Ac6 = new JButton();
+		ImageIcon iconoAc6 = new ImageIcon("");
+		Ac6.setIcon(iconoAc6);
+		panel.add(Ac6, "cell 2 2");
+		
+		JButton Ac7 = new JButton();
+		ImageIcon iconoAc7 = new ImageIcon("");
+		Ac7.setIcon(iconoAc7);
+		panel.add(Ac7, "cell 2 2");
+		
+		JButton Ac8 = new JButton();
+		ImageIcon iconoAc8 = new ImageIcon("");
+		Ac8.setIcon(iconoAc8);
+		panel.add(Ac8, "cell 2 2");
+		
+		JButton Ac9 = new JButton();
+		ImageIcon iconoAc9 = new ImageIcon("");
+		Ac9.setIcon(iconoAc9);
+		panel.add(Ac9, "cell 2 2");
+		
+		
+		
+		
+<<<<<<< HEAD
+<<<<<<< HEAD
+		
+		JButton Ac1 = new JButton();
+		ImageIcon iconoAc1 = new ImageIcon("");
+		Ac1.setIcon(iconoAc1);
+=======
+>>>>>>> refs/heads/Ruben
 		panel.add(Ac1, "cell 2 2");
 		
 		JButton Ac2 = new JButton();
@@ -138,6 +244,10 @@ public class VJuego extends JFrame {
 		
 		
 		
+=======
+>>>>>>> refs/heads/Ruben
+=======
+>>>>>>> refs/heads/Ruben
 		JLabel lblNewLabel = new JLabel("acertijo1");
 		panel.add(lblNewLabel, "cell 2 2");
 		
@@ -165,9 +275,13 @@ public class VJuego extends JFrame {
 		JLabel lblNewLabel_8 = new JLabel("acertijo9");
 		panel.add(lblNewLabel_8, "cell 10 6");
 		*/
-		JButton btnNewButton1 = new JButton("VOLVER");
-		btnNewButton1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JButton btnNewButton1 = new JButton("ATRAS");
+		btnNewButton1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// Cargar siguiente ventana	
+				setVisible(false);
+				vtn.setVisible(true);
 			}
 		});
 		contentPane.add(btnNewButton1, BorderLayout.SOUTH);

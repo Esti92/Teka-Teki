@@ -14,6 +14,8 @@ import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.*;
 import java.awt.event.ActionEvent;
 
@@ -24,12 +26,15 @@ public class PuntuacionClass extends JFrame {
 	private static ResultSet rs = null;
 	private static Statement st = null;
 	private static Connection con;
+	private JFrame vtp;
 	/**
 	 * Create the frame.
 	 */
 	int Puntos;
 	
-	public PuntuacionClass() throws SQLException {
+	public PuntuacionClass(JFrame _vtp) throws SQLException {
+		vtp = _vtp;
+		setTitle("RANKING DE LOS JUGADORES");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -65,7 +70,7 @@ public class PuntuacionClass extends JFrame {
 		
 		Conexion.conectar();
 		st = Conexion.conexion();
-		rs = Conexion.consultaDatos(st ,"select nombre, puntuacion from jugador");
+		rs = Conexion.consultaDatos(st ,"select jugador, sum(puntuacion) from resueltos group by jugador");
 		Object[][] filas = null;
 		int numFilas = 0;
 		int numColumnas = rs.getMetaData().getColumnCount();
@@ -79,8 +84,6 @@ public class PuntuacionClass extends JFrame {
 		while(rs.next()){
 			filas[contadorTmp][0] = rs.getString(1);
 			filas[contadorTmp][1] = rs.getString(2);
-//			filas[contadorTmp][2] = rs.getString(3);
-//			filas[contadorTmp][3] = rs.getInt(4);
 			contadorTmp++;
 		}
 		st.close();
@@ -89,10 +92,13 @@ public class PuntuacionClass extends JFrame {
 		table.setModel(dtm);
 		contentPane.add(table);
 		
-		JButton btnNewButton = new JButton("Volver");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//Accion ara regresar al menu anterior
+		JButton btnNewButton = new JButton("ATRAS");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// Cargar siguiente ventana	
+				setVisible(false);
+				vtp.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(55, 211, 294, 23);
