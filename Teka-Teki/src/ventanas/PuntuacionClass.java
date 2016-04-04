@@ -70,7 +70,7 @@ public class PuntuacionClass extends JFrame {
 		
 		Conexion.conectar();
 		st = Conexion.conexion();
-		rs = Conexion.consultaDatos(st ,"select jugador, sum(puntuacion) from resueltos");
+		rs = Conexion.consultaDatos(st ,"select jugador, sum(puntuacion) from resueltos group by jugador");
 		Object[][] filas = null;
 		int numFilas = 0;
 		int numColumnas = rs.getMetaData().getColumnCount();
