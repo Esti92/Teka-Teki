@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
@@ -24,7 +26,7 @@ public class VJuego extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VJuego(JFrame vtp, int _nivel, String _user) {
+	public VJuego(JFrame vtn, int _nivel, String _user) {
 		nivel = _nivel;
 		user = _user;
 		setTitle("EMPIEZA A JUGAR");
@@ -59,7 +61,7 @@ public class VJuego extends JFrame {
 				setVisible(false);
 				VAcertijo vA;
 				try {
-					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA = new VAcertijo(vtn, nivel, imagen, user);
 					vA.setLocationRelativeTo(null);
 					vA.setVisible(true);
 				} catch (SQLException e) {
@@ -75,7 +77,7 @@ public class VJuego extends JFrame {
 				setVisible(false);
 				VAcertijo vA;
 				try {
-					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA = new VAcertijo(vtn, nivel, imagen, user);
 					vA.setLocationRelativeTo(null);
 					vA.setVisible(true);
 				} catch (SQLException e) {
@@ -86,13 +88,13 @@ public class VJuego extends JFrame {
 		});
 		
 		
-		Ac1.addActionListener(new ActionListener() {
+		Ac3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				imagen = 3;
 				setVisible(false);
 				VAcertijo vA;
 				try {
-					vA = new VAcertijo(vtp, nivel, imagen, user);
+					vA = new VAcertijo(vtn, nivel, imagen, user);
 					vA.setLocationRelativeTo(null);
 					vA.setVisible(true);
 				} catch (SQLException e) {
@@ -138,6 +140,7 @@ public class VJuego extends JFrame {
 		
 		
 		
+<<<<<<< HEAD
 <<<<<<< HEAD
 		
 		JButton Ac1 = new JButton();
@@ -243,6 +246,8 @@ public class VJuego extends JFrame {
 		
 =======
 >>>>>>> refs/heads/Ruben
+=======
+>>>>>>> refs/heads/Ruben
 		JLabel lblNewLabel = new JLabel("acertijo1");
 		panel.add(lblNewLabel, "cell 2 2");
 		
@@ -270,9 +275,13 @@ public class VJuego extends JFrame {
 		JLabel lblNewLabel_8 = new JLabel("acertijo9");
 		panel.add(lblNewLabel_8, "cell 10 6");
 		*/
-		JButton btnNewButton1 = new JButton("VOLVER");
-		btnNewButton1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JButton btnNewButton1 = new JButton("ATRAS");
+		btnNewButton1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// Cargar siguiente ventana	
+				setVisible(false);
+				vtn.setVisible(true);
 			}
 		});
 		contentPane.add(btnNewButton1, BorderLayout.SOUTH);
