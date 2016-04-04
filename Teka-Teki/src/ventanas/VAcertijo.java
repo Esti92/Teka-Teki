@@ -44,7 +44,7 @@ public class VAcertijo extends JFrame {
 	 * Create the frame.
 	 * @throws SQLException 
 	 */	
-	public VAcertijo(JFrame vtp, int _nivel, int _imagen, String _user) throws SQLException {
+	public VAcertijo(JFrame vtp, int _nivel, int _imagen, String _user, JFrame _juegos) throws SQLException {
 		nivel = _nivel;
 		imagen = _imagen;
 		user = _user;
@@ -155,7 +155,7 @@ public class VAcertijo extends JFrame {
 					if (exito != -1){
 						JOptionPane.showMessageDialog(null,"Muy bien!! has acertado :D");
 						setVisible(false);
-						vtp.setVisible(true);
+						_juegos.setVisible(true);
 					}
 				}else{
 					//Si no es correcta le decimos que lo vuelva a intentar
