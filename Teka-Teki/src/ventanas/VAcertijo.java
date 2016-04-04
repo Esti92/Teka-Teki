@@ -135,7 +135,7 @@ public class VAcertijo extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				// Verificamos que la respuesta sea correcta
 				setVisible(false);
-				vtp.setVisible(true);
+				_juegos.setVisible(true);
 			}
 		});
 		
@@ -161,7 +161,7 @@ public class VAcertijo extends JFrame {
 					}
 				}else{
 					//Si no es correcta le decimos que lo vuelva a intentar
-					JOptionPane.showMessageDialog(null,"Respuesta incorrecta, Vuelve a intentar :D");
+					JOptionPane.showMessageDialog(null,"Respuesta incorrecta, Vuelve a intentar :( ");
 				}
 			}
 		});
