@@ -15,6 +15,8 @@ import net.miginfocom.swing.MigLayout;
 public class VNivel extends JFrame {
 
 	private JPanel contentPane;
+	int nivel = 0;
+	private String user;
 
 	/**
 	 * Launch the application.
@@ -23,7 +25,7 @@ public class VNivel extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VNivel frame = new VNivel(null);
+					VNivel frame = new VNivel(null, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +37,9 @@ public class VNivel extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VNivel(JFrame vtn) {
+	public VNivel(JFrame vtn, String _user) {
+		user = _user;
+		setTitle("NIVELES");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 195, 300);
 		contentPane = new JPanel();
@@ -47,43 +51,46 @@ public class VNivel extends JFrame {
 		contentPane.add(panel, "cell 0 1,alignx center,growy");
 		panel.setLayout(new MigLayout("", "[]", "[][][][]"));
 		
-		JButton btnNivelBajo = new JButton("Nivel bajo");
+		JButton btnNivelBajo = new JButton("Nivel bajo (1)");
 		panel.add(btnNivelBajo, "cell 0 0,alignx center");
 		
 		btnNivelBajo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// Cargar siguiente ventana	
+				// Cargar siguiente ventana
+				nivel = 1;
 				setVisible(false);
-				VJuego pS = new VJuego();
+				VJuego pS = new VJuego(vtn, nivel, user);
 				pS.setLocationRelativeTo(null);
 				pS.setVisible(true);
 			}
 		});
 		
-		JButton btnNivelMedio = new JButton("Nivel Medio");
+		JButton btnNivelMedio = new JButton("Nivel Medio (2)");
 		panel.add(btnNivelMedio, "cell 0 1,alignx center");
 		
 		btnNivelMedio.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// Cargar siguiente ventana	
+				nivel = 2;
 				setVisible(false);
-				VJuego pS = new VJuego();
+				VJuego pS = new VJuego(vtn, nivel, user);
 				pS.setLocationRelativeTo(null);
 				pS.setVisible(true);
 			}
 		});
 		
-		JButton btnNivelDificil = new JButton("Nivel Dificil");
+		JButton btnNivelDificil = new JButton("Nivel Dificil (3)");
 		panel.add(btnNivelDificil, "cell 0 2,alignx center");
 		
 		btnNivelDificil.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// Cargar siguiente ventana	
+				// Cargar siguiente ventana
+				nivel = 3;
 				setVisible(false);
-				VJuego pS = new VJuego();
+				VJuego pS = new VJuego(vtn, nivel, user);
 				pS.setLocationRelativeTo(null);
 				pS.setVisible(true);
 			}
